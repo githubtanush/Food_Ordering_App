@@ -1,0 +1,36 @@
+{
+  "name": "food_ordering_app",
+  "version": "1.0.0",
+  "description": "Making a website for just a practice like food ordering website like swiggy,zomato etc.",
+  "keywords": [
+    "Food",
+    "order",
+    "fooddelivery",
+    "foodorder",
+    "foodorderapp",
+    "fooddeleiveryapp"
+  ],
+  "homepage": "https://github.com/githubtanush/Food_Ordering_App#readme",
+  "bugs": {
+    "url": "https://github.com/githubtanush/Food_Ordering_App/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githubtanush/Food_Ordering_App.git"
+  },
+  "license": "ISC",
+  "author": "Tanush Arora",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
