@@ -22,9 +22,10 @@
 
 /* body */
 .res-card{
+    margin:5px;
     padding: 5px;
-    width : 200px;
-    height : 400px;
+    width : 250px;
+    /* height : 500px; remove the height it will automatically take it */
 }
 .res-card:hover{
     border: 1px solid black;
@@ -38,7 +39,5 @@
 }
 .res-container{
     display:flex;
-    justify-content: space-between;
-    margin: 5px;
     flex-wrap:wrap;
 }
