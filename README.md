@@ -132,3 +132,22 @@ setList is used for updating the ui according to every change
 - Microservice means we break the components into smaller parts or components and then make the different ports like for ui 1234 sms 3000 backend 1000 we make different ports and at the end we merge all the ports with a single domain name and then single domain call different different url and how the api interact with each other
 - One more benefit of microservices architecture is you can write your component code in your own convenience react/golang/java/c++ and many more it will merge then it work properly but on the other hand monolithic not give us that sukoon
 
+
+# Let's explore the React world 
+- Till now we have copied the data from the swiggy api now this is not the good part now we have take the data dynamically. 
+- but before doing that we discuss about how we fetch data from the backend there are two ways to fetch the data from the backend / or we have two approaches to fetch data from backend :- 
+- 1st way AppLoads ===> API calling 5000ms waiting ui ===> after that rendering
+- 2nd way AppLoads ===> Render atleast skeleton ===> API calling 5000ms ===> Again re-render with new data
+- so which is the best way ?
+- 2nd way is the best as when your app is loaded render it rapidly atleast you see the skeleton then api calling and then it again re-render with the original data 
+- Now your question is in that there is rendering two times ?
+- No problem , React is very fast in rendering React main advantage is that it renders very fast the whole app so it is ok render two times as it gives better ux (user Experience)
+- it's does not means you render 100 times as it is good but above case render two times is ok so don't think you render as many times it will good 
+## useEffect  
+- import with same as useState function via named import 
+- useEffect is an arrow function which is used callback function and use one dependency array 
+- useEffect is used because we need 2nd way of rendering and useEffect help in this 
+- What is the benefit of useEffect ? - In useEffect if it is inside in the body component then it will render the body component then after call the api and then re-render component again with new data so this is very helpful for us to use useEffect as it makes our life fully easy
+- Used optional chaining when we choose some specific part in live data 
+- optional chaining is the better and optimized way that use in industry
+- now after calling live api we don't have need more for mockdata now we can also delete that file

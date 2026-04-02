@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import resList from "../utils/mockData";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   //Let's we create one local state variable which is called as useStatehook
@@ -135,7 +136,8 @@ const Body = () => {
   //React does not do anything it is only good and efficient at dom-manipulation
   //As soon as i changed my state variable it will automatically refreshes the component 
   //it keeps the data layer in sync with the ui  
-  const [listOfRestaurants,setListOfRestaurants] = useState(resList);
+  //Now we remove the mockData as we don't need anymore and we delete mockdata file from the project
+  const [listOfRestaurants,setListOfRestaurants] = useState([]);
   
 //but if we use this simple react variable it will not sync or update ui with data layer
 //   let listOfRestaurants = [
@@ -253,7 +255,35 @@ const Body = () => {
 //   }
 // ];
 
-    return(
+    useEffect(() => {
+        fetchData();
+    },[]);
+
+    const fetchData = async () => {
+        const data = await fetch(
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.909877&lng=75.8696337&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        );
+        const json = await data.json();
+        console.log(json);
+        console.log(json.data.cards);
+        //Optional Chaining
+        setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants.length);
+    }
+
+    //AFter this loading react will not return the next return keyword jsx until they not will not complete
+    //there loading
+    //This concept is known as conditional Rendering 
+    // Rendering on the based of condition is known as conditional Rendering
+    //we also use a ternary operator here instead of if and return 
+    // if(listOfRestaurants.length === 0){
+    //     // return <h1> loading.... </h1>
+    //     return <Shimmer/>
+    // }
+    //conditional Rendering if the condition fulfill shimmer return not fulfil then return api rendering
+    return listOfRestaurants.length === 0? (
+    <Shimmer/> 
+    ) : (
         <div className="Body">
             <div className="filter">
                 <button
@@ -261,7 +291,7 @@ const Body = () => {
                     onClick={()=>{
                         // listOfRestaurants = listOfRestaurants.filter(
                         const filteredList = listOfRestaurants.filter(
-                            (res)=> res.rating>4.5
+                            (res)=> res.info.rating>4.5
                         );
                         // console.log(listOfRestaurants);
                         setListOfRestaurants(filteredList);
@@ -295,16 +325,16 @@ const Body = () => {
                 <Restaurantcard resData={resList[4]}/>
                 <Restaurantcard resData={resList[5]}/>
                 <Restaurantcard resData={resList[6]}/> */}
-                {/* for using javascript we use curly brackets we have made the config driven ui suppose
+                 {/* for using javascript we use curly brackets we have made the config driven ui suppose
                 in future restaurant less or more as well as ui adjust so we made config driven ui 
                 in console now there is an warning of each child in the key must have unique key property
                 which is simply means that when we looping something then each key item should be uniquely represent 
                 whenever you are looping onto anything anylist you have to give a key over there and u have to pass 
                 unique id there what is unique id like resId types so always keep in mind to avoid that error whenever we
-                looping or mapping something then we must have give a key to them but why we use the key?*/
-                listOfRestaurants.map((restaurant) => (
+                looping or mapping something then we must have give a key to them but why we use the key? */}
+                {listOfRestaurants?.map((restaurant) => (
                     // This is the function which returning some piece of jsx use map lot of times in react so understand map
-                    <RestaurantCard key={restaurant.id} resData={restaurant}/>
+                    <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                 ))}
             </div>             
         </div>

@@ -9,10 +9,11 @@ import {CDN_URL} from "../utils/constants"
 const Restaurantcard = (props) =>{
     // console.log(props);
     // const {resName,cuisine} = props;
-    const {resData} = props;
+    const {resData} = props; // as it is the whole array 
+    // const restaurant = resData?.data || resData;// Use .data if it exists, otherwise use resData directly
     // const {} = resData?.data; optional chaining 
     //now by destructuring we remove resdata.cloudinaryImageId -> cloudinaryImageId;
-    const {cloudinaryImageId,name,cuisines,deliveryTime,costForTwo,rating} = resData;
+    const {cloudinaryImageId,name,cuisines,deliveryTime,costForTwo,rating} = resData?.info;
     return(
         // In component we cannot add inline styling in component as same as we earlier done in html 
         //for this we have to make the style object
