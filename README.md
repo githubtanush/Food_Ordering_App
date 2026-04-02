@@ -106,4 +106,29 @@
 - useEffect()
 - hooks import in the react via named import
 - Whenever we say hook means we talk it about the utility function
-- 
+- Now what is React hook?
+- It is a normal js function which give some utilities useState give us powerful state variable
+- React Reconcilation algorithm?
+- Whenever something changes known as reconcilation
+- what is actual dom?
+- tags like div,img
+- what is virtual dom?
+- copy of actual dom which is stored in the form of object { div ... ..} like that 
+- What is Diff algorithm?
+- basically use to find out the difference between the old ui vs new ui and after finding the difference re-render all the dom in cycle
+- why 2 element in const[list,setList] this is destructuring 
+- as you know we write code like that
+const[list,setList] = useState()
+when we destructure or it meaning is 
+const arr = useState();
+const[list,setList] = useState()
+like that const list = arr[0];
+const setList = arr[1];
+setList is used for updating the ui according to every change 
+- There are 2 elements in state variable because we need a trigger to start the diff algorithm and update the ui that is why create the second function. when we call second function it will automatically update ui this is react algorithm
+
+# Monolith and microservice architecture
+- Monolith architecture we do all the things in one single project 
+- Microservice means we break the components into smaller parts or components and then make the different ports like for ui 1234 sms 3000 backend 1000 we make different ports and at the end we merge all the ports with a single domain name and then single domain call different different url and how the api interact with each other
+- One more benefit of microservices architecture is you can write your component code in your own convenience react/golang/java/c++ and many more it will merge then it work properly but on the other hand monolithic not give us that sukoon
+
