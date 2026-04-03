@@ -151,3 +151,11 @@ setList is used for updating the ui according to every change
 - Used optional chaining when we choose some specific part in live data 
 - optional chaining is the better and optimized way that use in industry
 - now after calling live api we don't have need more for mockdata now we can also delete that file
+- We use shimmer ui for comfortable loading time with user 
+- useState() function understanding 
+-  why we need useState() function ? 
+- because with the local variable the object will be updated with the new value but the ui will not be updated so we use the state variable which has the superpower of react and here we use another variable which is associated or start with set which is the trigger for the react to refresh the ui and update so we use the set variable 
+- we use useState() function as it is used for updating the ui efficiently and react is fast in efficiently rendering 
+- the state variable can update the ui efficiently because react is fast in dom-manipulation only set variable updated with new value and then it will render
+- we make one login / logout button to understand it carefully 
+- now we can make the search button **useState** hook is essential for managing dynamic data that changes over time and needs to be reflected in the user interface (UI). 

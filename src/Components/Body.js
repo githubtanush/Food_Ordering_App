@@ -138,6 +138,12 @@ const Body = () => {
   //it keeps the data layer in sync with the ui  
   //Now we remove the mockData as we don't need anymore and we delete mockdata file from the project
   const [listOfRestaurants,setListOfRestaurants] = useState([]);
+  const [filteredRestaurant,setFilteredRestaurant] = useState([]);
+  //so now instead of updating our listofrestaurant we just updating our setFilteredRestaurant
+  //and now onwards when i am rendering i am rendering it with filteredRestaurant in res-card
+  const [searchText,setSearchText] = useState("");
+  //Whenever state variables update, react triggers a reconcilation cycle(re-renders the whole component)
+  console.log("Body rendered");
   
 //but if we use this simple react variable it will not sync or update ui with data layer
 //   let listOfRestaurants = [
@@ -268,6 +274,7 @@ const Body = () => {
         console.log(json.data.cards);
         //Optional Chaining
         setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants.length);
     }
 
@@ -286,15 +293,43 @@ const Body = () => {
     ) : (
         <div className="Body">
             <div className="filter">
+                <div className="search">
+                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+                        setSearchText(e.target.value);
+                    }}/>
+                    <button onClick={() => {
+                        //Filter the restaurant cards and update the ui
+                        //I will need the search text here
+                       const filteredRestaurant = listOfRestaurants.filter(
+                        //This is what amazing thing that we figure out 
+                        //now i know that u stuck in uppercase and lower case of text that is case sensitive
+                        // so we must convert both strings into lowercase Now whatever random order i can 
+                        // search it will not give this error
+                        //now u will go through when i am searching anything or doing filter onetime we got one restaurant or filtered restaurant
+                        // and now we have searching around these 2 restaurants only and lost all 15 restaurants which was there now that
+                        //filtered only working on that 2 restaurants but is this functionality good actually search will find out from all 15 restaurants 
+                        // so it is a bug how u can solve this bug ? 
+                        // mistake or bug over here we are just updating our listofrestaurants with filtered restaurants
+                        // now we solve this bug by create another state variable for all the filtered restaurants
+                        (res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                        // (res)=>res.info.name === searchText we find direct exact name my bad 
+                        //we search that should include that name
+                        );
+                        // setListOfRestaurants(filteredRestaurant);
+                        setFilteredRestaurant(filteredRestaurant);
+
+                    }}
+                    >Search</button>
+                </div>
                 <button
                     className="filter-btn"
                     onClick={()=>{
                         // listOfRestaurants = listOfRestaurants.filter(
                         const filteredList = listOfRestaurants.filter(
-                            (res)=> res.info.rating>4.5
+                            (res)=> res.info.avgRating>4.1
                         );
                         // console.log(listOfRestaurants);
-                        setListOfRestaurants(filteredList);
+                        setFilteredRestaurant(filteredList);
                     }}
                     >
                     Top Rated Restaurants
@@ -332,7 +367,12 @@ const Body = () => {
                 whenever you are looping onto anything anylist you have to give a key over there and u have to pass 
                 unique id there what is unique id like resId types so always keep in mind to avoid that error whenever we
                 looping or mapping something then we must have give a key to them but why we use the key? */}
-                {listOfRestaurants?.map((restaurant) => (
+                {/* { listOfRestaurants?.map((restaurant) =>( */}
+                {/* from now we never modify the list of restaurants we just modify the filtered restaurant
+                no , i am modifying the one time when i am getting data from api got it 
+                but now my filteredRestaurant is empty there is nothing visible so what can i do so when i am 
+                updating data we want the copy of filteredRestaurant as well as the listofRestaurants with whatever data i have got*/}
+                {filteredRestaurant?.map((restaurant) => (
                     // This is the function which returning some piece of jsx use map lot of times in react so understand map
                     <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                 ))}

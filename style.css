@@ -21,6 +21,10 @@
 
 
 /* body */
+.filter{
+    display:flex;
+    justify-content: space-between;
+}
 .res-card{
     margin:5px;
     padding: 5px;

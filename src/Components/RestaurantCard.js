@@ -13,7 +13,7 @@ const Restaurantcard = (props) =>{
     // const restaurant = resData?.data || resData;// Use .data if it exists, otherwise use resData directly
     // const {} = resData?.data; optional chaining 
     //now by destructuring we remove resdata.cloudinaryImageId -> cloudinaryImageId;
-    const {cloudinaryImageId,name,cuisines,deliveryTime,costForTwo,rating} = resData?.info;
+    const {cloudinaryImageId,name,cuisines,sla,costForTwo,avgRating} = resData?.info;
     return(
         // In component we cannot add inline styling in component as same as we earlier done in html 
         //for this we have to make the style object
@@ -37,9 +37,9 @@ const Restaurantcard = (props) =>{
             <h4>{props.cuisine}</h4> */}
             <h3>{name}</h3>
             <h4>{cuisines.join(", ")}</h4>
-            <h4>{rating} stars</h4>
+            <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>
-            <h4>{deliveryTime} mins</h4>
+            <h4>{sla?.slaString} mins</h4>
         </div>
     )
 };

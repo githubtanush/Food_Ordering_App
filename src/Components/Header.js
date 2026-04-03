@@ -10,6 +10,7 @@ const Header = () => {
     //reconcile whole header component but changed only that specific part not 
     // whole component even load 
     const [btnName,setbtnName] = useState("Login");
+    console.log("Header Render");
     return(
     <div id="container">
         <div id="logo-container">
@@ -38,3 +39,7 @@ const Header = () => {
     );
 };
 export default Header;
+
+
+//When do u need useState why do you need useState in depth so that we can 
+//understand everything in depth
