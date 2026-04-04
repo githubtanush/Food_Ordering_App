@@ -267,11 +267,11 @@ const Body = () => {
 
     const fetchData = async () => {
         const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.909877&lng=75.8696337&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.909877&lng=75.8696337&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         );
         const json = await data.json();
         console.log(json);
-        console.log(json.data.cards);
+        console.log(json.data.cards[4]);
         //Optional Chaining
         setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -288,7 +288,7 @@ const Body = () => {
     //     return <Shimmer/>
     // }
     //conditional Rendering if the condition fulfill shimmer return not fulfil then return api rendering
-    return listOfRestaurants.length === 0? (
+    return (listOfRestaurants.length === 0) ? (
     <Shimmer/> 
     ) : (
         <div className="Body">
