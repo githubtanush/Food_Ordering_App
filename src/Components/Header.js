@@ -1,5 +1,8 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+// import the link from the react router dom  so that whole page is not refresh only which 
+// part we want to change according to api only that refreshes
 const Header = () => {
     //UseState variable because we need a trigger that refreshed whole the 
     //Header component and refreshes the ui with normal js variable this is 
@@ -19,9 +22,11 @@ const Header = () => {
         </div>
         <div id="nav-items">
             <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
+                {/* use Link to instead of a href so that it cannot refresh the whole page it 
+                just refresh only the component that is changes that was why react is fast */}
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/contactus">Contact Us</Link></li>
                 <li>Cart</li>
                 <button 
                     className="login"

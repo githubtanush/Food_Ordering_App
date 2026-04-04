@@ -181,3 +181,54 @@ setList is used for updating the ui according to every change
 - we use named import and use **createBrowserRouter** for it to create our router that browse with the help of apis
 - we use **ReactProvider** to provide the router to the react earlier we give them directly but now we provide via ReactProvider
 - we also create our own error page and we improve to give the error on the page via using useRouteError hook which is very useful to show an error in the browser so that developer can understand exactly what error is there and useRouteError is also import via named import
+- 	react-router alag se install karne ki zarurat nahi hoti
+-	react-router-dom@6 automatically handle karta hai
+## now we learn about child Routes and many more inside it 
+- so before talking about the child routes we talk about how we can header and footer in tight means fix at one place and just the body component changes in th ebody allowed then what we do?
+- To make this type of functionality happen what i have to make is children router via code like that
+``` 
+    const appRouter = createBrowserRouter([
+        {
+            path : "/"
+            element : <AppLayout/>
+            children:[
+                {
+                    path:"/about,
+                    element:<About/>
+                },
+                {
+                    path:"/contactus
+                    element:<contact/>
+                },
+            ],
+            errorElement : <Error/>
+        },
+    ]);
+```
+- so,whatever we want to display we have to push in our children whatever we want
+- Now AppLayout has 3 children accroding to path but where should i load this over here in this outlet according to path by using outlet has outlet is a component over here Outlet will be filled with children according to our path. so , we import outlet via named import we pass this children in outlet now according to path it will render . This is how we create children route in this app.This outlet will be replaced via component where we using outlet . The end user does not even let to know here we are make some outlets but we loading this pages according to outlet. This is how we create child route in our app
+- *Now we create link in about home contactus page we create the link?*
+- earlier we used to create an anchor tag and href it takes me to about us page but when we are in react and we want to move to other page or about us. 
+- never ever used the anchor tag because when i go to aboutus page the whole page got refreshed. i don't want to refresh our whole page or we can say that whole component but still want to go our route This will make our app faster
+- They navigate to the different page without re-loading the whole page. Now we used to trick which helps us to go to page without even re-loading. so we use link in react. first we import from react-router-dom via named import only difference between anchor tag and link tag is 
+``` <a href="url"></a> 
+    <Link to="url"></Link>
+```
+- instead using a href we use Link to it not reloading the whole page as my whole page will not refresh don't reload the whole page will not refresh or don't reload the page so, when we navigating to different route always use Link to that does not refresh the whole page just re-load the components
+-  Link                     | anchor                                                             refresh the component | reload the whole page
+- this is why our react is known as the single page application. In the whole single page application it just changing the components It is just a single page application. if i want to go to the new route also it just changing the components not reloading the whole page In the earlier days we make many html pages contactus/about etc. Browser will not reload the website and this is why react known as single page application 
+- There are two types of routing 
+- client side routing 
+- server side routing 
+- index.html contactus.html aboutus.html -> read information -> and then shown to website known as server side routing It means you make a network call and the page come from server known as server side scripting 
+- all the components are already loaded into our app. It's already have the code. It does not make any network call. It does make only network call when i make network call in api.
+- and that is the best defination of single page application 
+- *Single page application * is just like one page with just the components getting render via client side routing. These are very important things we need re-routing why so this is very important. 
+- Now when we learn about basic routing createBrowserRouter, RouterProvider,Outlet. Now we want to make dynamic routing here we create routers for different different restaurant we want to show restaurant menu page and how we handle all this things and enable the dynamic routing
+
+## Dynamic Routing
+- As we do the dynamic routing we just make the restaurant menu api by using restaurant menu page
+- so we make one more component named as restaurant-menu so that we create one new api and linked it with restaurant-menu component
+- so we first of all add one more path in app.js file like that /rest-menu/:resId as this :(colon) represents that the link is dynamic and changing the output data according to the id 
+- so now as we make the res-menu card we fetch the data using useEffect api and u know very well when the data will be displayed will use state variable so that when the data fetched from the api then it would be set by state variable and data will loaded in that ui 
+- Also make one more ui shimmer for that ux is good for the user 

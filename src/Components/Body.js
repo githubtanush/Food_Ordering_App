@@ -291,7 +291,7 @@ const Body = () => {
     //     return <Shimmer/>
     // }
     //conditional Rendering if the condition fulfill shimmer return not fulfil then return api rendering
-    return (listOfRestaurants.length === 0) ? (
+    return (listOfRestaurants?.length === 0) ? (
     <Shimmer/> 
     ) : (
         <div className="Body">

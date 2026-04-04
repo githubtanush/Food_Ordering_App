@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
 import Error from "./Components/Error";
@@ -10,19 +10,38 @@ import Error from "./Components/Error";
 
 const AppLayout = () => {
     return <div className="app">
+        {/* path="/" */}
         <Header/>
+        {/* but we want to render all things according fix in router 
+        so we used the things named as outlet so i will show the components just we want 
+        to the user so we import outlet via named import and add in this and add one more 
+        path in the child routes this"/"
         <Body/>
+        {/* path="/about" */}
+        {/* <About/> */}
+        {/* path="/contactus" */}
+        {/* <ContactUs/> */} 
+        {/* Outlet - To act according to component what u want 
+        outlet means whenever there is a change in the path the outlet will be filled with 
+        the child component*/}
+        <Outlet/>
     </div>;
 };
 
 //Now we don't give directly firstly we named import createBrowserRouter and RouteProvider 
 //then we use it to create the path and the component for it
 //we use createBrowserRouter for creating the routing
+//as react is case sensitive children c is small remember
+//now want to add Link tag in our body so that whole page doesnot refresh just component refreshes which 
+//part is changed in whole page
 const appRouter = createBrowserRouter([
     {
         path:"/",
         element:<AppLayout/>,
-        errorElement:<Error/>
+    children:[
+    {
+        path:"/",
+        element:<Body/>,
     },
     {
         path:"/about",
@@ -32,6 +51,9 @@ const appRouter = createBrowserRouter([
         path:"/contactus",
         element:<ContactUs/>
     }
+    ],
+    errorElement:<Error/>  ,
+}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
