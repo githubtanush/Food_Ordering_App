@@ -159,3 +159,25 @@ setList is used for updating the ui according to every change
 - the state variable can update the ui efficiently because react is fast in dom-manipulation only set variable updated with new value and then it will render
 - we make one login / logout button to understand it carefully 
 - now we can make the search button **useState** hook is essential for managing dynamic data that changes over time and needs to be reflected in the user interface (UI). 
+- depth in useState hook by create different different state variables about filteredRestaurants
+- listofRestaurants and searchText state variable 
+- solve the cors plugin issue via corsproxy.io
+- means we learnt about real api handling + hooks + shimmer ui + depth of useState hook + depth of useEffect hook and many more this is very knowledgable lesson
+- if no dependency array => useEffect is call on every render 
+- if dependency array is empty = [] => useEffect will called on one initial render(just once)
+- if dependency array is [btnNameReact] => called everytime when btnName is updated 
+- and always remind that it will always called on their first initial render evertime unless the condition fulfil or not
+- never create state variables outstide the functional component always called useState variables inside your functional component as it is used to create local state variables inside your functional component
+- as js is single synchronous threaded language try to call this hooks on top try to use useState on hook
+- when we start from top create state variables on top
+- Also react will understand state variables properly
+- never use your useState hook or create state variables inside if/else / function or loops as - it is written in documentation . This can create inconsistencies in your project. because for some renders sometimes there would be searchText and sometimes not .
+- so what i am trying to say is variables inside the function component on higher level and nowhere else if u will follow this yiu will never their issue with state variables . As this is good practice or best practice if we follow this code will run smoothly. 
+
+# Routing
+- Now we come into routing
+- first of all for enable router for move in different pages for example about page feedback page by /about /feedback we simply use a package which is known as react-router-dom
+- For downloading the react-router-dom we download it by using **npm i react-router-dom** 
+- we use named import and use **createBrowserRouter** for it to create our router that browse with the help of apis
+- we use **ReactProvider** to provide the router to the react earlier we give them directly but now we provide via ReactProvider
+- we also create our own error page and we improve to give the error on the page via using useRouteError hook which is very useful to show an error in the browser so that developer can understand exactly what error is there and useRouteError is also import via named import

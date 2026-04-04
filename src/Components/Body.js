@@ -260,7 +260,10 @@ const Body = () => {
 //     offer: "70% OFF upto ₹140"
 //   }
 // ];
-
+   // if no dependency array => useEffect is call on every render 
+   // if dependency array is empty = [] => useEffect will called on one initial render(just once)
+   // if dependency array is [btnNameReact] => called everytime when btnName is updated 
+   // and always remind that it will always called on their first initial render evertime unless the condition fulfil or not
     useEffect(() => {
         fetchData();
     },[]);

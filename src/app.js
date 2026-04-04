@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./Components/About";
+import ContactUs from "./Components/ContactUs";
+import Error from "./Components/Error";
 
 
 const AppLayout = () => {
@@ -11,8 +15,29 @@ const AppLayout = () => {
     </div>;
 };
 
+//Now we don't give directly firstly we named import createBrowserRouter and RouteProvider 
+//then we use it to create the path and the component for it
+//we use createBrowserRouter for creating the routing
+const appRouter = createBrowserRouter([
+    {
+        path:"/",
+        element:<AppLayout/>,
+        errorElement:<Error/>
+    },
+    {
+        path:"/about",
+        element:<About/>
+    },
+    {
+        path:"/contactus",
+        element:<ContactUs/>
+    }
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>)
+// root.render(<AppLayout/>)
+//Now we provide the routerprovider instead of passing directly to the render
+root.render(<RouterProvider router = {appRouter}/>);
 
 
 //what we majorally says or major learning?
