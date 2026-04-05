@@ -237,3 +237,34 @@ setList is used for updating the ui according to every change
 - make mock data because swiggy restaurant-menu-list not working because of some cors error 
 - router components routing algorithm depth about single page application , usestate , useEffect done
 - always remember that u have to change resId everytime as it is verified resId === Id or not so you need to always correct because we make mock data some resId same but some will always changes
+
+## class based components
+- class based components is older but is important to understood. as in future we need it because
+- first of all it is most asked interview questions in many companies because many companies are working still in older projects which is already working on class based components. 
+- second reason if we know how to write class based components then understanding of react will become very strong . if we understanding this concept this will also strong the understanding of concept which we today learn and we will also get to know how painful it was previously and how eary know 
+- Third reason its amazing because
+- 1.) how react lifecycle works 
+- 2.) how it render (beauty of react components) more on deeper level
+
+Now we are going to seen how we create class-based components
+Now we create about us section In our about section we create something like information of the team . Which is the feature i would to like add. 
+now for that let just create a functional based component and then convert it into class - based component 
+- functional component - normal js function
+- class based component - normal js class
+- declare by 
+```
+    class CompoonentName extends React.component{
+        //for props write ctor
+        constructor(props){ //pass props
+        //mandatory to write 
+        super(props) //after write we now use it anywhere by writing this.props
+        console.log(props);
+        }
+        render(){
+
+        }
+    }
+```
+- Reast import , export method are same
+
+# Now we can study how we can create state in our class based components
