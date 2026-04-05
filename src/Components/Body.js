@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState , useEffect } from "react";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //Let's we create one local state variable which is called as useStatehook
@@ -377,7 +378,11 @@ const Body = () => {
                 updating data we want the copy of filteredRestaurant as well as the listofRestaurants with whatever data i have got*/}
                 {filteredRestaurant?.map((restaurant) => (
                     // This is the function which returning some piece of jsx use map lot of times in react so understand map
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+                    // <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+                    //To make this card clickable import the lia from react-router-dom via named import and start doing use it
+                    //use Link component instead of anchor tag because it is not refresh our whole page
+                    //Now key is also not on the restaurant it should be on the jsx
+                    <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}><RestaurantCard resData={restaurant}/></Link>
                 ))}
             </div>             
         </div>

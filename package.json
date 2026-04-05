@@ -27,6 +27,7 @@
     "test": "jest"
   },
   "devDependencies": {
+    "buffer": "^6.0.3",
     "parcel": "^2.16.4"
   },
   "dependencies": {

@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
-import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
 import Error from "./Components/Error";
+import RestaurantMenu from "./Components/RestaurantMenu";
+import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 
 
 const AppLayout = () => {
@@ -36,8 +37,8 @@ const AppLayout = () => {
 //part is changed in whole page
 const appRouter = createBrowserRouter([
     {
-        path:"/",
-        element:<AppLayout/>,
+    path:"/",
+    element:<AppLayout/>,
     children:[
     {
         path:"/",
@@ -50,9 +51,13 @@ const appRouter = createBrowserRouter([
     {
         path:"/contactus",
         element:<ContactUs/>
+    },
+    {
+        path:"/restaurants/:resId",
+        element:<RestaurantMenu/>
     }
     ],
-    errorElement:<Error/>  ,
+    errorElement:<Error/>,
 }
 ]);
 

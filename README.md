@@ -211,7 +211,8 @@ setList is used for updating the ui according to every change
 - earlier we used to create an anchor tag and href it takes me to about us page but when we are in react and we want to move to other page or about us. 
 - never ever used the anchor tag because when i go to aboutus page the whole page got refreshed. i don't want to refresh our whole page or we can say that whole component but still want to go our route This will make our app faster
 - They navigate to the different page without re-loading the whole page. Now we used to trick which helps us to go to page without even re-loading. so we use link in react. first we import from react-router-dom via named import only difference between anchor tag and link tag is 
-``` <a href="url"></a> 
+``` 
+    <a href="url"></a> 
     <Link to="url"></Link>
 ```
 - instead using a href we use Link to it not reloading the whole page as my whole page will not refresh don't reload the whole page will not refresh or don't reload the page so, when we navigating to different route always use Link to that does not refresh the whole page just re-load the components
