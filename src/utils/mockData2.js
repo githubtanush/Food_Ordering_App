@@ -35,7 +35,7 @@ const resList = [
 
   {
     info: {
-      id: "769058",
+      id: "825670",
       name: "McDonald's",
       cuisines: ["Burgers"],
       avgRating: 4.2,
@@ -52,7 +52,7 @@ const resList = [
 
   {
     info: {
-      id: "769736",
+      id: "87259",
       name: "KFC",
       cuisines: ["Chicken"],
       avgRating: 4.1,
@@ -69,7 +69,7 @@ const resList = [
 
   {
     info: {
-      id: "1006676",
+      id: "262097",
       name: "Subway",
       cuisines: ["Healthy Food"],
       avgRating: 4.0,
@@ -86,7 +86,7 @@ const resList = [
 
   {
     info: {
-      id: "374532",
+      id: "1266032",
       name: "Biryani Blues",
       cuisines: ["Biryani"],
       avgRating: 4.3,
@@ -103,7 +103,7 @@ const resList = [
 
   {
     info: {
-      id: "841289",
+      id: "1054007",
       name: "Haldiram's",
       cuisines: ["Snacks"],
       avgRating: 4.4,
@@ -120,7 +120,7 @@ const resList = [
 
   {
     info: {
-      id: "90590",
+      id: "302705",
       name: "Barbeque Nation",
       cuisines: ["BBQ"],
       avgRating: 4.5,

@@ -92,9 +92,9 @@ console.log("restaurant:", restaurant);
         <div className="menu">
             {/* //This is very clumsy so we should destructure it first in the top */}
              {/* <h1>{resList?.data?.cards?.[0]?.card?.card?.info?.name}</h1>  */}
-             <h1>{restaurant.info.name}</h1>
+             <h1>{restaurant?.info?.name}</h1>
             <p>
-                {restaurant.info?.cuisines.join(", ")} - {restaurant.info?.costForTwo}
+                {restaurant?.info?.cuisines.join(", ")} - {restaurant.info?.costForTwo}
             </p> 
             <ul>
                 {/* with live api

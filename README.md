@@ -233,3 +233,7 @@ setList is used for updating the ui according to every change
 - so we first of all add one more path in app.js file like that /rest-menu/:resId as this :(colon) represents that the link is dynamic and changing the output data according to the id 
 - so now as we make the res-menu card we fetch the data using useEffect api and u know very well when the data will be displayed will use state variable so that when the data fetched from the api then it would be set by state variable and data will loaded in that ui 
 - Also make one more ui shimmer for that ux is good for the user 
+- Link tag depth 
+- make mock data because swiggy restaurant-menu-list not working because of some cors error 
+- router components routing algorithm depth about single page application , usestate , useEffect done
+- always remember that u have to change resId everytime as it is verified resId === Id or not so you need to always correct because we make mock data some resId same but some will always changes
