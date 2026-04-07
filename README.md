@@ -286,3 +286,25 @@ now for that let just create a functional based component and then convert it in
 - Now in react when we need to update the state variables we need to use this.setState() never ever update it directly by making one button functionality
 - and in the functional component it will be update by setbtnName using hook
 - react will update count in setState in the class based component and don't create again and again 
+- react will only update that state variable which is in big object never touch any other variable and change only the specific portion of the component not whole component
+
+## Now we study about how render process works in the class based component
+- Now you will know first of all any class ctor will be called 
+- then only render will be called 
+- and then only in there it is one more functionality componentDidMount() is there which we called and after render that will be called
+- so we treat componentDidMount is as same as the useEffect in which we say that pattern:- 
+```
+    React => render => API called => Re-render again 
+```
+- we can see more beneficially when we make that parent itself a class based component
+- then in parent it's order like that
+```
+    parent ctor called
+    parent render called
+    child ctor called
+    child render called
+    child componentDidMount
+    parent componentDidMount
+```
+- so this is the overall pattern how the render lifecycle will work in a class based component
+- so this is overall life cycle of react that how it has works
