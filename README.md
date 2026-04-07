@@ -283,3 +283,6 @@ now for that let just create a functional based component and then convert it in
 ```
 - In React class based we cannot create state variables with the help of hook infact at this time hooks was not even come in existence and the state variable we can even make in the functional component behind the scene make like this
 - React saved all the state in one big state object and then it would come in existence 
+- Now in react when we need to update the state variables we need to use this.setState() never ever update it directly by making one button functionality
+- and in the functional component it will be update by setbtnName using hook
+- react will update count in setState in the class based component and don't create again and again 
