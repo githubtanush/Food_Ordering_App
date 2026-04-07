@@ -103,7 +103,7 @@ const resList = [
 
   {
     info: {
-      id: "1054007",
+      id: "1006676",
       name: "Haldiram's",
       cuisines: ["Snacks"],
       avgRating: 4.4,

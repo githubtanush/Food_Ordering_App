@@ -7,13 +7,25 @@ class UserClass extends React.Component{
     constructor(props){
         super(props);
 
+        //In the class based component we create state variables like that:- 
+        this.state = {
+            count:0,
+            count2:1,
+        }
+        //and behind the scene react work like that create one big state variables 
+        // and store all the state variables in that 
+
         console.log(props);
     }
     render(){
         //we also desturcture in above like we do in functional component
         const {name,location} = this.props;
+        //and state variables calls like that 
+        const{count,count2} = this.state;
         return(
             <div className="user-card">
+            <h1>Count : {count}</h1>
+            <h2>Count2 : {count2}</h2>
             <h2>Name: {name}</h2>
             <h3>Location:{location}</h3>
             <h4>Contact: @tanush83</h4>

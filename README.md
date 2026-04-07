@@ -268,3 +268,18 @@ now for that let just create a functional based component and then convert it in
 - Reast import , export method are same
 
 # Now we can study how we can create state in our class based components
+- In React class based components we create state variables inside ctor like that 
+```
+    ctor(props){
+        super(props);
+        this.state{
+            count: 0,
+            count2 : 1,
+        }
+    };
+    and calls like that 
+    const[count,count2] = this.state;
+    and then we use
+```
+- In React class based we cannot create state variables with the help of hook infact at this time hooks was not even come in existence and the state variable we can even make in the functional component behind the scene make like this
+- React saved all the state in one big state object and then it would come in existence 
