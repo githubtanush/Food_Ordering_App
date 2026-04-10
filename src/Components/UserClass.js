@@ -16,13 +16,13 @@ class UserClass extends React.Component{
         // and store all the state variables in that 
 
         console.log(props);
-        console.log("childCtor called");
+        console.log(this.props.name + "childCtor called");
     }
     componentDidMount(){
-        console.log("ChildComponent is mounted");
+        console.log(this.props.name + "ChildComponent is mounted");
     }
     render(){
-        console.log("childRender called");
+        console.log(this.props.name + "childRender called");
         //we also desturcture in above like we do in functional component
         const {name,location} = this.props;
         //and state variables calls like that 

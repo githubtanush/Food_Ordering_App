@@ -308,3 +308,5 @@ now for that let just create a functional based component and then convert it in
 ```
 - so this is the overall pattern how the render lifecycle will work in a class based component
 - so this is overall life cycle of react that how it has works
+- componentDidMount is best for render the api in itself
+- Now i am making two child components in the single file and then we know that how the render works actually
