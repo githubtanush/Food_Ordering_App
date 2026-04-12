@@ -310,3 +310,10 @@ now for that let just create a functional based component and then convert it in
 - so this is overall life cycle of react that how it has works
 - componentDidMount is best for render the api in itself
 - Now i am making two child components in the single file and then we know that how the render works actually
+- When we make two child first ctor called, then patch all the render cycle then render of both will be called and then patch the mounting and then component did mount called 
+- And atlast parent component did mount called
+- So, What is Component Did Update?
+- Component Did update works after ComponentDidMount is already called then we move to the componentDid update first ctor called, then render , then mounting , then again render ,setState() and all things happened only then update will be calledd
+- So, What is component did unmount?
+- Component Will unmount called only if you leave that page and move to another page then component will unmount is called 
+- That's it about react render lifecycle 

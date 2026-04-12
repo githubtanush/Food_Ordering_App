@@ -8,41 +8,65 @@ class UserClass extends React.Component{
         super(props);
 
         //In the class based component we create state variables like that:- 
-        this.state = {
-            count:0,
-            count2:1,
-        }
+        // this.state = {
+        //     count:0,
+        //     count2:1,
+        // }
         //and behind the scene react work like that create one big state variables 
         // and store all the state variables in that 
+
+        this.state={
+            userInfo:{
+                name:"showing name....",
+                location:"showing location Default on map..."
+            }
+        }
 
         console.log(props);
         console.log(this.props.name + "childCtor called");
     }
-    componentDidMount(){
-        console.log(this.props.name + "ChildComponent is mounted");
+    async componentDidMount(){
+        const data = await fetch("https://api.github.com/users/githubtanush");
+        const json = await data.json();
+        this.setState({
+            userInfo:json,
+        })
+        // console.log(this.props.name + "ChildComponent is mounted");
+        console.log(json);
+        console.log(this.props.name + "Component Did mounted");
+    }
+
+    componentDidUpdate(){
+        console.log(this.props.name + "Component Did Updated");
+    }
+    componentWillUnmount(){
+        console.log(this.props.name + "Component will unmount");
     }
     render(){
         console.log(this.props.name + "childRender called");
         //we also desturcture in above like we do in functional component
-        const {name,location} = this.props;
+        // const {name,location} = this.props;
+         const {name,location,avatar_url} = this.state.userInfo;
+        //  debugger
         //and state variables calls like that 
-        const{count,count2} = this.state;
+        // const{count,count2} = this.state;
         return(
             <div className="user-card">
-            <h1>Count : {count}</h1>
+            {/*<h1>Count : {count}</h1>
             <h2>Count2 : {count2}</h2>
-            <button onClick={() => {
+             <button onClick={() => {
                 //Never ever update state variables directly this will create inconsistencies in code that's why 
                 //we can't create like that
                 // this.state.count => this.state.count+1;
                 //we set it via use this 
-                this.setState({
-                    count: this.state.count+1,
-                    count2: this.state.count2+1,
-                });
+                // this.setState({
+                //     count: this.state.count+1,
+                //     count2: this.state.count2+1,
+                // });
             }}
-            >
-                cntIncrease</button>
+            > 
+                cntIncrease</button>*/}
+            <img src={avatar_url}/>
             <h2>Name: {name}</h2>
             <h3>Location:{location}</h3>
             <h4>Contact: @tanush83</h4>
@@ -51,3 +75,17 @@ class UserClass extends React.Component{
     };
 };
 export default UserClass;
+
+/*
+    ---------------MOUNTING LIFECYCLE-----------------------
+    Ctor(dummy data) called
+    Render(dummy data) called
+            <HTML DUMMY>
+    Component Did Mount
+            <API Call>
+            <this.setState> called --> state variable updated
+    -- UPDATE 
+            render(API data)
+            <HTML (new API data)>
+    Component Did Update
+*/
