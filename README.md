@@ -317,3 +317,34 @@ now for that let just create a functional based component and then convert it in
 - So, What is component did unmount?
 - Component Will unmount called only if you leave that page and move to another page then component will unmount is called 
 - That's it about react render lifecycle 
+- When i should go deep i in react lifecycle i see how much the code is difficult to write in the react class so it is very important to make react functional component as it is very easy for use
+- As a single page application when i did componentdidmount and code setInterval inside that is always running when i am move to the another component according to pages then it must be reconciling the component again and setinterval calling again and again now u know how a big loop is find in the code that setinterval calling again and again  like that but suppose if u pass anything in the useEffect dependency array means when it component render page refresh at all the time when that component renders and in the react we do this in componentDidUpdate like that and in that setInterval call even in thrice that is a big big loop hole u think if u render another page or component then it is important to clear all the previous data so that was why we have componentWillUnmount
+''' 
+    if(this.state.count != prevState.count){}
+'''
+means which we do in just 
+''' 
+    useEffect (()=>{
+    },[count]);
+'''
+- we are write so much hectic code in class component and suppose if we do in 2 components we do in useEffect like that 
+''' 
+    useEffect (()=>{
+    },[count,count2]);
+
+    and in class component like that 
+    if(this.state.count != prevState.count || this.state.count2 != prevState.count2){}
+
+    and suppose sometimes is like that we need to call different useEffect and pass dependency in diff diff useEffect then we write like that :- 
+    useEffect (()=>{
+    },[count]);
+    useEffect(()=>{
+
+    },[count2]);
+    so the class component will be like that 
+    if(this.state.count != prevState.count){}
+    if(this.state.count2 != prevState.count2){}
+    and sometimes the if condition has lots n lots of lines so u can see how this is hectic to write like that so that's why react is complicated and it's lose his leverage that's why react developer introduce hooks , functions and many other things so that React again create his liberty that it can write easily and help react developers to code easily 
+'''
+
+- so,that's why we call componentwillunmount so that we unmounting the things unmounting set interval so that it's not calling on every reconcilation cycle and component will unmount when things are not in the favour 
