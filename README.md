@@ -318,7 +318,7 @@ now for that let just create a functional based component and then convert it in
 - Component Will unmount called only if you leave that page and move to another page then component will unmount is called 
 - That's it about react render lifecycle 
 - When i should go deep i in react lifecycle i see how much the code is difficult to write in the react class so it is very important to make react functional component as it is very easy for use
-- As a single page application when i did componentdidmount and code setInterval inside that is always running when i am move to the another component according to pages then it must be reconciling the component again and setinterval calling again and again now u know how a big loop is find in the code that setinterval calling again and again  like that but suppose if u pass anything in the useEffect dependency array means when it component render page refresh at all the time when that component renders and in the react we do this in componentDidUpdate like that and in that setInterval call even in thrice that is a big big loop hole u think if u render another page or component then it is important to clear all the previous data so that was why we have componentWillUnmount
+- As a single page application when i did componentdidmount and code setInterval inside that is always running when i am move to the another component according to pages then it must be reconciling the component again and setinterval calling again and again now u know how a big loop is find in the code that setinterval calling again and again  like that but suppose if u pass anything in the useEffect dependency array means when it component render page refresh at all the time when that component renders and in the react and in that setInterval call even in thrice that is a big big loop hole u think if u render another page or component then it is important to clear all the previous data so that was why we have componentWillUnmount
 ''' 
     if(this.state.count != prevState.count){}
 '''
@@ -348,3 +348,55 @@ means which we do in just
 '''
 
 - so,that's why we call componentwillunmount so that we unmounting the things unmounting set interval so that it's not calling on every reconcilation cycle and component will unmount when things are not in the favour 
+
+- one more question u know in useEffect when this setInterval then if i change the component or page and when it reconcile then setInterval in that not calling again false setInterval process is still calling after how many seconds which gap u design so to stop and will unmount things in the useEffect we write like that :- 
+    ```
+        useEffect(()=>{
+            //API call
+            setInterval (() => {
+                console.log("hi");
+            },1000);
+
+            return ()=>{
+                //in this we unmount the things 
+
+            }
+        })
+
+        and u know componentDidMount is like that:- 
+        componentDidMount(){
+            setInterval(() => {
+                console.log("HI");
+            },1000);
+        }
+        componentWillUnmount(){
+            clearInterval();
+        }
+
+        Now stop and tell me how u call that clearInterval now the answer is with the help of this 
+        as this is shared between all the functions or methods of this class so, we will use this.anyvariable and unmount things like that we write :- 
+        **In class component**
+        componentDidMount(){
+            this.timer = setInterval(() => {
+                console.log("HI");
+            },1000);
+        }
+        componentWillUnmount(){
+            clearInterval(this.timer);
+        }
+        and in useEffect like that :- 
+         useEffect(()=>{
+            //API call
+            this.timer = setInterval (() => {
+                console.log("hi");
+            },1000);
+
+            return ()=>{
+                //in this we unmount the things 
+                clearInterval(this.timer);
+
+            }
+        })
+
+    so now we understand everything in depth that was why react is awesome efven with the cons of a single page application react successfully justify it's existence and make it's leverage in the market so that this is the way how react create its signification in market that was why still react has a good position in the market
+    ```
