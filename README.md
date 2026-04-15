@@ -400,3 +400,15 @@ means which we do in just
 
     so now we understand everything in depth that was why react is awesome efven with the cons of a single page application react successfully justify it's existence and make it's leverage in the market so that this is the way how react create its signification in market that was why still react has a good position in the market
     ```
+
+- As we move ahead now we see how i optimize our app we can optimize our app through adding custom hooks 
+- Before talk about hooks we simply talk about Single responsibility principle
+- The single responsibility principle simply say that we break our code to smaller smaller and smaller parts so that our code becomes modular and maintainable one more benefit is that if we make our code modular and we use one code for one single responsibility and treat it as single unit 
+- Then one more benefit of creating a single unit of code and give one component to one responsibility that when we want to use this again we use that single responsible unit in anywhere in the code again
+- so we use single responsibility principle for that 
+- And if we make our code to single unit then we must adding test cases in that to test if there is bug 
+- and easily find a bug in code
+- making our code single responsibility principle makes our code modular, maintainable and reusable 
+- Now the question is how we make our app more optimized ?
+- For optimizing the app we use custome hooks we create our own hooks react gives some hooks like useState, useEffect, useParams which we used and many more give us react but we also create our own custom hooks
+- now to make our code modular and maintainable we just give some responsibility from our component to hooks so that our code becomes more maintainable
