@@ -425,3 +425,6 @@ means which we do in just
 - now after creating the custom hook we are free to use and we also see that now our restaurant menu component has one only work which is show data now code is split into more smaller parts and now it is easy to modularize , testable and reusable 
 - so this is why we make the custom hooks to split task into more smaller tasks
 - and we create custom hooks and use it simply use like hooks and because of this our code becomes more modular , testable and reusable
+- now we deep dive into custom and we itself create a useOnlineStatus hook in our website 
+- in this we need window object and access of the window given to us by the browser browser give us access to the window object and then window object give us utility about checking the status either it is offline or online we check it use via window object online or offline 
+- and we use this things in our project 

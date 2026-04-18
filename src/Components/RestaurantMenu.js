@@ -4,6 +4,7 @@ import resList from "../utils/mockData2";
 import Restaurantcard from "./RestaurantCard";
 import { useParams } from "react-router-dom";
 import { MENU_API_URL } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const RestaurantMenu = () => {
@@ -89,6 +90,13 @@ const RestaurantMenu = () => {
     console.log("resId:", resId);
 console.log("restaurant:", restaurant);
 
+    const onlineStatus = useOnlineStatus();
+    if(onlineStatus === false){
+        return (
+            <h1>Look's like you're offline !!! please check your internet connection!!!</h1>
+        );
+    }
+    
     return(
         <div className="menu">
             {/* //This is very clumsy so we should destructure it first in the top */}

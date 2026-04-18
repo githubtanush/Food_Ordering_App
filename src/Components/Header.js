@@ -1,6 +1,7 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 // import the link from the react router dom  so that whole page is not refresh only which 
 // part we want to change according to api only that refreshes
 const Header = () => {
@@ -13,6 +14,7 @@ const Header = () => {
     //reconcile whole header component but changed only that specific part not 
     // whole component even load 
     const [btnName,setbtnName] = useState("Login");
+    const onlineStatus = useOnlineStatus();
     console.log("Header Render");
     return(
     <div id="container">
@@ -23,7 +25,9 @@ const Header = () => {
         <div id="nav-items">
             <ul>
                 {/* use Link to instead of a href so that it cannot refresh the whole page it 
-                just refresh only the component that is changes that was why react is fast */}
+                just refresh only the component that is changes that was why react is fast 
+                and this should be strings */}
+                <li>Online Status : {onlineStatus?"✅":"🔴"} </li>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/contactus">Contact Us</Link></li>
