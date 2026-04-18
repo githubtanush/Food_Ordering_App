@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -7,8 +7,15 @@ import ContactUs from "./Components/ContactUs";
 import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
+// import Grocery from "./Components/Grocery";
 
 
+//When we not used lazy loading till now we have grocery component inside our one .js file 
+//When we make this separate and different bundler we simply used the keyword lazy for it
+//now we doing chunking/lazy loading/code splitting/dynamic bundling / on demand bundling/dynamic import
+
+const Grocery = lazy(() => import("./Components/Grocery"));
+// const About = lazy(()=> import("./Components/About"));
 const AppLayout = () => {
     return <div className="app">
         {/* path="/" */}
@@ -51,6 +58,14 @@ const appRouter = createBrowserRouter([
     {
         path:"/contactus",
         element:<ContactUs/>
+    },
+    {
+        path:"/grocery",
+        element:(
+        <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery/>
+            </Suspense>
+        ),
     },
     {
         path:"/restaurants/:resId",

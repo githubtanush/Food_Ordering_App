@@ -2,6 +2,7 @@ import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import Grocery from "./Grocery";
 // import the link from the react router dom  so that whole page is not refresh only which 
 // part we want to change according to api only that refreshes
 const Header = () => {
@@ -31,6 +32,7 @@ const Header = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/contactus">Contact Us</Link></li>
+                <li><Link to="/grocery">Grocery</Link></li>
                 <li>Cart</li>
                 <button 
                     className="login"

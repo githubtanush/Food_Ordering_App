@@ -216,7 +216,7 @@ setList is used for updating the ui according to every change
     <Link to="url"></Link>
 ```
 - instead using a href we use Link to it not reloading the whole page as my whole page will not refresh don't reload the whole page will not refresh or don't reload the page so, when we navigating to different route always use Link to that does not refresh the whole page just re-load the components
--  Link                     | anchor                                                             refresh the component | reload the whole page
+-  Link                     | anchor                                                              refresh the component | reload the whole page
 - this is why our react is known as the single page application. In the whole single page application it just changing the components It is just a single page application. if i want to go to the new route also it just changing the components not reloading the whole page In the earlier days we make many html pages contactus/about etc. Browser will not reload the website and this is why react known as single page application 
 - There are two types of routing 
 - client side routing 
@@ -428,3 +428,8 @@ means which we do in just
 - now we deep dive into custom and we itself create a useOnlineStatus hook in our website 
 - in this we need window object and access of the window given to us by the browser browser give us access to the window object and then window object give us utility about checking the status either it is offline or online we check it use via window object online or offline 
 - and we use this things in our project 
+- so we used this lazy loading to split into different bundlers for the web so that our app will become more optimized 
+- we use lazy keyword for doing it 
+- As when we use the lazy keyword due to react rendering is very fast our react gives error to lazy loading the app so we wrap up inside the suspense keyword which says to react to wait for the component rendering 
+- and then we used fallback attribute to give their some shimmer ui when page is loading or some json 
+- so this is how we import lazy loading in our app and optimized our app 
