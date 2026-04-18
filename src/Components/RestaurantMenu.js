@@ -69,7 +69,8 @@ const RestaurantMenu = () => {
     //operator blindly so we used this shimmer ui early as in fetch api we initialize useState with null 
     //that was why everytime shimmer is called but now shimmer is called and res is load later so restaurant 
     //card render properly
-
+    // const resInfo = useRestaurantMenu(resId);
+    
     const restaurant = resList.find(
         (res) => res.info.id === resId
     );

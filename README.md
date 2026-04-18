@@ -400,6 +400,7 @@ means which we do in just
 
     so now we understand everything in depth that was why react is awesome efven with the cons of a single page application react successfully justify it's existence and make it's leverage in the market so that this is the way how react create its signification in market that was why still react has a good position in the market
     ```
+- Now i have 2 quesions 1st why in ctor we used super(props) and why we cannot use async with useEffect
 
 - As we move ahead now we see how i optimize our app we can optimize our app through adding custom hooks 
 - Before talk about hooks we simply talk about Single responsibility principle
@@ -412,3 +413,15 @@ means which we do in just
 - Now the question is how we make our app more optimized ?
 - For optimizing the app we use custome hooks we create our own hooks react gives some hooks like useState, useEffect, useParams which we used and many more give us react but we also create our own custom hooks
 - now to make our code modular and maintainable we just give some responsibility from our component to hooks so that our code becomes more maintainable
+- creating custom hooks make our code more modularize , maintainable and testable 
+### so now we understand why we need hooks?
+- first of all till now Restaurant menu card has two responsibility 
+- one has to fetch the data
+- and the other has to show the data 
+- Now u don't think that restaurant menu card component carry only 1 functionality of show data and take other responsibility of fetching the data to another or we can say that abstract the logic of fetching so we create one more hook named as useRestaurantMenu hook for fetching the data from api 
+- at the end hook is a utility function so we create the hooks under utils folder and for creating the hook we just create it like a component 
+- but simply for create we use use keyword in small so react code can understand that it is hook
+- and in utils folder in custom hooks we write as simple as we write in the react code and treat it as a single component 
+- now after creating the custom hook we are free to use and we also see that now our restaurant menu component has one only work which is show data now code is split into more smaller parts and now it is easy to modularize , testable and reusable 
+- so this is why we make the custom hooks to split task into more smaller tasks
+- and we create custom hooks and use it simply use like hooks and because of this our code becomes more modular , testable and reusable
