@@ -433,3 +433,17 @@ means which we do in just
 - As when we use the lazy keyword due to react rendering is very fast our react gives error to lazy loading the app so we wrap up inside the suspense keyword which says to react to wait for the component rendering 
 - and then we used fallback attribute to give their some shimmer ui when page is loading or some json 
 - so this is how we import lazy loading in our app and optimized our app 
+
+# Jo Dikhta hai voh bikta hai
+- Now i work on css at this before tailwind we have different different utilities for use that 
+- 1st is adding style.css file
+- 2nd way is add some superpower to css via **SASS AND SCSS**
+- 3rd way is that we used style components which is commonly used with react lot of big component use style components
+- 4th way is we use material ui 
+- 5th way bootstrap 
+- 6th way chakra ui
+- 7th way ant design
+and many more ways 
+
+**But now we are going to deep dive into tailwind css** and understand how tailwind css works
+- from the official documentation of **tailwindcss.com** we take the information about the how we insert or import tailwind into our code go and download tailwind from tailwindcss.com and design our website like that so we decorate our website most optimizally because **Jo Dikhta hai voh bikta hai**
