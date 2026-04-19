@@ -296,12 +296,14 @@ const Body = () => {
     <Shimmer/> 
     ) : (
         <div className="Body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+            <div className="filter flex justify-between items-center">
+                <div className="search m-4 p-4">
+                    <input type="text" className="border border-black rounded-xl" value={searchText} onChange={(e)=>{
                         setSearchText(e.target.value);
                     }}/>
-                    <button onClick={() => {
+                    <button 
+                    className="px-4 py-2 bg-green-100 m-4 rounded-2xl"
+                    onClick={() => {
                         //Filter the restaurant cards and update the ui
                         //I will need the search text here
                        const filteredRestaurant = listOfRestaurants.filter(
@@ -325,8 +327,9 @@ const Body = () => {
                     }}
                     >Search</button>
                 </div>
+                <div className="filterbtn m-4 p-4">
                 <button
-                    className="filter-btn"
+                    className="px-4 py-2 bg-green-100 m-4 rounded-2xl"
                     onClick={()=>{
                         // listOfRestaurants = listOfRestaurants.filter(
                         const filteredList = listOfRestaurants.filter(
@@ -338,8 +341,9 @@ const Body = () => {
                     >
                     Top Rated Restaurants
                 </button>
+                </div>
             </div>
-            <div className="res-container">
+            <div className="res-container flex flex-wrap">
         {/* // To make this frontend dynamic we pass props 
         //so what is props?
         //React functional component at the end of the day just a normal js function 

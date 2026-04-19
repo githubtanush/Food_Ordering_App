@@ -20,12 +20,14 @@ const Restaurantcard = (props) =>{
         // <div className="res-card" style={StyleCard}>
         // or we written object like that {{}} because it refer one style curly 
         // bracket and other nested curly bracket means {{}} that thing is object
-        <div className="res-card" style = {{backgroundColor:"#f0f0f0"}}>
+        //if i write w-[200px] means we hardcoded and give width manually
+        <div className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:cursor-pointer hover:bg-gray-200">
+        {/* // style = {{backgroundColor:"#f0f0f0"}}> */}
             <img    
-                className="res-logo"
+                className="res-logo rounded-lg"
                 alt = "res-logo"
                 height="250px"
-                width="200px"
+                width="250px"
                 src={CDN_URL+cloudinaryImageId}
             />
             {/* <h3>Pizza Hut</h3>
@@ -35,7 +37,7 @@ const Restaurantcard = (props) =>{
             //This is complicated ui that resData.data or etc we will destructure it*/}
             {/* <h3>{props.resName}</h3>
             <h4>{props.cuisine}</h4> */}
-            <h3>{name}</h3>
+            <h3 className="font-bold py-4 text-lg">{name}</h3>
             <h4>{cuisines.join(", ")}</h4>
             <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>

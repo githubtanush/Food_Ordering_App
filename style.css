@@ -1,5 +1,9 @@
-/* head */
-#container{
+/* now we importing tailwind css into our css file by importing this 
+and now our project in configured to use tailwind*/
+@import "tailwindcss";
+
+ /*head */
+/*#container{
     display : flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -17,22 +21,22 @@
     margin : 10px;
     list-style-type: none;
 }
-
+ */
 
 
 /* body */
-.filter{
+/* .filter{
     display:flex;
     justify-content: space-between;
 }
 .res-card{
     margin:5px;
     padding: 5px;
-    width : 250px;
+     width : 250px; */
     /* height : 500px; remove the height it will automatically take it */
-}
+/* }
 .res-card:hover{
-    border: 1px solid black;
+    border: 1px solid black; 
     cursor: pointer;
 }
 .search{
@@ -63,11 +67,11 @@
     padding: 0 20px;
     cursor: pointer;
     margin: 0 10px;
-}
+} */
 
 
 /* user card */
-.user-card{
+/* .user-card{
     padding: 10px;
     border : 1px solid black;
-}
+} */

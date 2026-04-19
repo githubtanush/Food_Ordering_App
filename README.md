@@ -447,3 +447,29 @@ and many more ways
 
 **But now we are going to deep dive into tailwind css** and understand how tailwind css works
 - from the official documentation of **tailwindcss.com** we take the information about the how we insert or import tailwind into our code go and download tailwind from tailwindcss.com and design our website like that so we decorate our website most optimizally because **Jo Dikhta hai voh bikta hai**
+- we creating one .postcssrc file and this is our way to tell parcel that we use tailwindcss file we create one .postcssrc file in root component and in the file we write //This is our way to tell parcel we are using tailwind css parcel this to tell that we use tailwind
+- tailwind css has many profit when it will be use like according to that is :- 
+- I don't move to another files don't want to switch between the html and css files
+- and it give us many superpowers
+- but this has one cons also if i give css to each tag and this becomes our code more ugly
+- but tailwind gives us or offers us many ui which we use from **tailwind.css/components** and we use it also as our className or code goes so big so we use already made components by tailwind also because it becomes more lengthy
+- by tailwind we are trying to import our css code into our html and jsx file
+- 2 major disadvantages
+- our code becomes ugly and it comes with the initial learning curve
+- one more advantages of tailwind css that it has very light very very light 
+- tailwinds library has thousands of css classes but it will only import the css which we require to host our app it will only include the css we required minimum to minimum 
+- if i write m-4 100 times in our code it only import 1 time in our code not every time 
+- so it keeps the bundle size small 
+- it is very light weight very very lightweight
+- with this classes we use complex ui we are also import hover kind of thing
+- it's tiny never ship unused css again and again
+- example - if i am in a team and i want that button should see as green colour and i add and shiped the code and then another developer again add className and add green color so this is a lot of unused css or redundant css in code and all the developer give in certain way 
+- so only the css you will used only that will import 
+- Responsive everything (we write media queries as well)
+- hover and focus state 
+- worried about duplication !!! - not duplicate things 
+- Now with dark mode today all websited provides dark mode and always provide dark mode 
+- so it provides dark mode feature because dark mode feature is very difficult to write and there is a lot of code when we write for dark mode
+- and many more utilities
+- In frontend market things come very fast and things go very fast 
+- so always try to keep up with the technology and always try to stay updated 

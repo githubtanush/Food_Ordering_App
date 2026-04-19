@@ -18,24 +18,26 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
     console.log("Header Render");
     return(
-    <div id="container">
-        <div id="logo-container">
-            <img className="logo" 
+    // <div id="container"> //now we don't need it we describe className as we use tailwind
+    //but for one i write there next i will change itself in code
+    <div className="flex justify-between bg-pink-100 sm:bg-yellow-100 lg:bg-green-100">
+        <div className="logo-container">
+            <img className="w-56" 
             src={LOGO_URL} />
         </div>
-        <div id="nav-items">
-            <ul>
+        <div className="flex items-center">
+            <ul className="flex p-4 m-4">
                 {/* use Link to instead of a href so that it cannot refresh the whole page it 
                 just refresh only the component that is changes that was why react is fast 
                 and this should be strings */}
-                <li>Online Status : {onlineStatus?"✅":"🔴"} </li>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/contactus">Contact Us</Link></li>
-                <li><Link to="/grocery">Grocery</Link></li>
-                <li>Cart</li>
+                <li className="px-4">Online Status : {onlineStatus?"✅":"🔴"} </li>
+                <li className="px-4"><Link to="/">Home</Link></li>
+                <li className="px-4"><Link to="/about">About Us</Link></li>
+                <li className="px-4"><Link to="/contactus">Contact Us</Link></li>
+                <li className="px-4"><Link to="/grocery">Grocery</Link></li>
+                <li className="px-4">Cart</li>
                 <button 
-                    className="login"
+                    className="px-4"
                     onClick={()=>{
                         btnName==="Login"
                         ?setbtnName("Logout")
