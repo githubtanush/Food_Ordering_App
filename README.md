@@ -473,3 +473,9 @@ and many more ways
 - and many more utilities
 - In frontend market things come very fast and things go very fast 
 - so always try to keep up with the technology and always try to stay updated 
+
+# Data is the new oil
+- In this we learn about higher order components?
+- Higher order component is the function nothing but just a component which takes the another component as input and then enhance their features and return a component in the output 
+- This is called higher order component or we can also call it as a enhancer
+- by using higher order component i added promoted or swiggy one benefits label to the card and in which except that 1 part we pass the props as we pass earlier so we use spread operator so that Restaurant will take all the required information from props like that :- ```<Restaurant Card {...props}>```

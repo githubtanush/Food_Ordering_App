@@ -21,6 +21,7 @@ const Restaurantcard = (props) =>{
         // or we written object like that {{}} because it refer one style curly 
         // bracket and other nested curly bracket means {{}} that thing is object
         //if i write w-[200px] means we hardcoded and give width manually
+        // we will make the restaurant card with the promoted label
         <div className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:cursor-pointer hover:bg-gray-200">
         {/* // style = {{backgroundColor:"#f0f0f0"}}> */}
             <img    
@@ -45,4 +46,20 @@ const Restaurantcard = (props) =>{
         </div>
     )
 };
+
+//Higher order component
+//input - Restaurant Card =>> Restaurant card (with swiggy one benefits);
+export const withPromotedLabel = (Restaurantcard) => {
+    return(props) => {//passing the props to this return because this returns will carry properties
+        return (
+            <div>
+                <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+                    one Free delivery
+                </label>
+                <Restaurantcard {...props}/>
+            </div>
+        )
+    }
+}
+
 export default Restaurantcard;

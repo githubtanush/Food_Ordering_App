@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
 import { useState , useEffect } from "react";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
@@ -143,6 +143,7 @@ const Body = () => {
   //so now instead of updating our listofrestaurant we just updating our setFilteredRestaurant
   //and now onwards when i am rendering i am rendering it with filteredRestaurant in res-card
   const [searchText,setSearchText] = useState("");
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
   //Whenever state variables update, react triggers a reconcilation cycle(re-renders the whole component)
   console.log("Body rendered");
   
@@ -386,7 +387,13 @@ const Body = () => {
                     //To make this card clickable import the lia from react-router-dom via named import and start doing use it
                     //use Link component instead of anchor tag because it is not refresh our whole page
                     //Now key is also not on the restaurant it should be on the jsx
-                    <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}><RestaurantCard resData={restaurant}/></Link>
+                    <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
+                        {/* {
+                        restaurant.data.promoted?(<RestaurantCardPromoted resData={restaurant}/>
+                        ):(<RestaurantCard resData={restaurant}/>)
+                    } */}
+                    <RestaurantCard resData={restaurant}/>
+                    </Link>
                 ))}
             </div>             
         </div>
